@@ -2,7 +2,7 @@
 
 ---
 
-## Repositório destinado aos exercícios da Academia de Lógica resolvidos pelo G15 Codificados 👩🏽‍💻👾💻
+## Repositório destinado ao projeto CV Builder AI pelo G13 MisturaDEV 👩🏽‍💻👾💻
 ```bash
     * André de Oliveira Ferreira. 
     * Davis de Godoy Esmael.
