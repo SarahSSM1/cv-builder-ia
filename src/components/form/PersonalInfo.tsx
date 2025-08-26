@@ -1,41 +1,51 @@
+import React, { useState } from 'react';
 
-function PersolnalInfo() {
-  return (
-    <section>
+const PersonalInfo = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
 
-      <h3>Dados pessoais</h3>
-      <p>Informações básicas para contato</p>
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Handle form submission logic here
+        console.log({ name, email, phone });
+    };
 
-      <form action="">
-        <div>
-          <label htmlFor="fullName">Nome Completo</label>
-          <br />
-          <input type="text" name="fullName" id="fullName" placeholder='Seu nome completo'/>
-        </div>
+    return (
+        <form onSubmit={handleSubmit}>
+            <div>
+                <label htmlFor="name">Name:</label>
+                <input
+                    type="text"
+                    id="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                />
+            </div>
+            <div>
+                <label htmlFor="email">Email:</label>
+                <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+            </div>
+            <div>
+                <label htmlFor="phone">Phone:</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    required
+                />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    );
+};
 
-        <div>
-          <label htmlFor="email">Email</label>
-          <br />
-          <input type="email" name="email" id="email" placeholder='seu.email@exemplo.com' />
-        </div>
-
-        <div>
-          <label htmlFor="phone">Telefone</label>
-          <br />
-          <input type="tel" name="phone" id="phone" placeholder='(11) 99999-9999' />
-        </div>
-
-        <div>
-          <label htmlFor="linkedin">LinkedIn</label>
-          <br />
-          <input type="text" name="linkedin" id="linkedin" placeholder='linkedin.com/in/seuperfil' />
-        </div>
-
-      </form>
-
-    </section>
-    
-  )
-}
-
-export default PersolnalInfo
+export default PersonalInfo;

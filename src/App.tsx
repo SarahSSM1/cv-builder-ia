@@ -1,36 +1,27 @@
 import { useState } from 'react'
-import './components/preview/CVPreview'
-import './components/form/PersonalInfo'
-import './components/preview/PersonalHeader'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import FormSection from './components/Layout/FormSection';
+import PreviewSection from './components/Layout/PreviewSection';
+import CVPreview from './components/Preview/CVPreview';
+import React from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
-import PersolnalInfo from './components/form/PersonalInfo'
-import PersonalHeader from './components/preview/PersonalHeader'
-import CVPreview from './components/preview/CVPreview'
 
-function App() {
-  return(
-    <>
-      <header>
-        <h1>Gerador de Curriculos AI</h1>
-        <p>Gerador inteligente de Currículos com IA</p>
-      </header>
+const App = () => {
+    return (
+        <Router>
+            <div>
+                <Switch>
+                    <Route path="/" exact>
+                        <FormSection />
+                        <PreviewSection />
+                    </Route>
+                    <Route path="/preview" component={CVPreview} />
+                </Switch>
+            </div>
+        </Router>
+    );
+};
 
-      <main>
-        {/* card da esquerda no qual o usuário preenche os dados */}
-        <div>          
-          <PersonalHeader />
-          <PersolnalInfo />       
-        </div>
-
-        {/* card da direita no qual o usuário visualiza o preview */}
-        <div>
-          <CVPreview />
-        </div>
-
-
-      </main>
-    </>
-  )  
-}
-
-export default App
+export default App;

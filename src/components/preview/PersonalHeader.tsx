@@ -1,10 +1,12 @@
-function PersonalHeader() {
-  return (
-    <section>
-      <h2>Informações do Currículo</h2>
-      <p>Preencha os dados e veja o preview em tempo real</p>
-    </section>
-  )
-}
+import React from 'react';
 
-export default PersonalHeader
+const PersonalHeader: React.FC<{ name: string; title: string; }> = ({ name, title }) => {
+    return (
+        <header>
+            <h1>{name}</h1>
+            <h2>{title}</h2>
+        </header>
+    );
+};
+
+export default PersonalHeader;
